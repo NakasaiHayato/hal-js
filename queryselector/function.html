@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Axios</title>
+</head>
+
+<body>
+<script>
+  // function hello(name) {
+  //     console.log("こんにちは");
+  //     console.log("お元気ですか");
+  //     console.log(name); //引数に好きな文字を入れることができる
+  // }
+
+  // 無名関数 helloという変数に関数を入れることができる
+  // const hello = function (name){
+  //     console.log("こんにちは");
+  //     console.log("お元気ですか");
+  //     console.log(name);
+  // }
+  // hello("小泉先生");
+  //
+  // // こういう書き方もできる1
+  // (function () {
+  //     console.log("こんにちは");
+  //     console.log("お元気ですか");
+  // })();
+  //
+  // // こういう書き方もできる2
+  // (function (name) {
+  //     console.log("こんにちは");
+  //     console.log("お元気ですか");
+  //     console.log(name);
+  // })("杉山先生");
+
+  // window.addEventListener("load", function(){
+  //     console.log("呼び出されたよ");
+  // });
+  // window.addEventListener("load", function(){
+  //     console.log("ごはんよー");
+  // });
+</script>
+
+<button class="food" id="karaage">からあげ</button>
+<p>合計金額: <span id="price">0</span>円</p>
+<ul id="List">
+</ul>
+</body>
+
+
+<script>
+    // button取得します。
+    // const button = document.getElementById(".food")でも可能
+    const button = document.querySelector(".food");
+
+    // 唐揚げボタンを押した回数
+    let count = 0;
+
+    // button clickイベントを取得
+    button.addEventListener("click", function(){
+        // clickイベントが行われたら、唐揚げの金額を表示
+        count += 1;
+        const span = document.querySelector("#price");
+        const list = document.querySelector("#List");
+        // テンプレートリテラル。``で囲むと文字列の中に式を埋め込むことができる。
+        // ``以外で書くと文字列と式の間に+を入れて連結しなければいけない。
+        span.innerText = `${count * 200}`;
+
+        // listに購入履歴を追加
+        const li = document.createElement("li"); // liタグを生成
+        li.innerText = `唐揚げ購入合計個数: ${count}個`;
+        list.appendChild(li);
+    });
+    // clickイベントが行われてたら、唐揚げの金額を表示
+    // 200円
+</script>
+</html>

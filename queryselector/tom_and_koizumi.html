@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>tom</title>
+</head>
+
+<body>
+<h1>どっちがTOMかな？</h1>
+<div class="wrapper">
+  <div id="koizumi">
+    <img src="koizumi.png" alt="小泉">
+  </div>
+  <div id="tom">
+    <img src="tom.jpg" alt="ブラザートム">
+  </div>
+  <div id="result">
+
+  </div>
+</div>
+<script>
+    const koizumi = document.querySelector("#koizumi");
+    const tom = document.querySelector("#tom");
+    const result = document.getElementById("result");
+
+    koizumi.addEventListener("click", function () {
+        result.innerText = "私が小泉だ";
+    })
+    tom.addEventListener("click", function () {
+        result.innerText = "正解ー！！";
+    })
+</script>
+</body>
+</html>
